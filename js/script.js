@@ -2,10 +2,11 @@
 var PopupExit = function (closeBtn, popup, seconds) {
 
     var self = this;
-    var getCookie = jQuery.cookie('exitPopupCookie'); // Получаем куку (если она есть то не выводим попап)
+    var getCookie = jQuery.cookie('exitPopupViewed');
+    var convertedSeconds = seconds * 1000;
 
     self.closePopupInitialize = function () {
-        // Запуск работы областей закрытия попапа
+        // initialize close popup functions
 
         $(document).on('click', popup, function (e) {
             if (e.target != this) {
@@ -24,23 +25,26 @@ var PopupExit = function (closeBtn, popup, seconds) {
     };
 
     self.checkPopupCookie = function () {
-        // Проверка наличия куки
+        // check popup cookie available 
 
         if (getCookie) {
             return false;
         }
         else {
-            return true; // нет куки
+            return true; // no cookie
         }
+
     };
 
     self.addPopupCookie = function () {
-        // Добавление куки на год
+        // add cookie for a 7 days
 
-        jQuery.cookie('exitPopupCookie', {
+        jQuery.cookie('exitPopupViewed', {
             expires: 7,
             path: '/'
         });
+
+        $(popup).addClass('m__popup-viewed');
 
     };
 
@@ -51,18 +55,18 @@ var PopupExit = function (closeBtn, popup, seconds) {
     };
 
     self.init = function () {
-        // Инициализация
+        // Initialization
 
         if (self.checkPopupCookie() && $(popup).length != 0) {
             setTimeout(function () {
                 $(document).on('mouseleave', function (e) {
-                    if (e.clientY < 1) {
+                    if (e.clientY < 1 && !$(popup).hasClass('m__popup-viewed')) {
                         self.showPopup();
                         self.addPopupCookie();
-                        self.closePopupInitialize(); // инициализация закрывающих элементов
+                        self.closePopupInitialize();
                     }
                 });
-            }, seconds);
+            }, convertedSeconds);
         }
         else {
             return false;
@@ -74,4 +78,4 @@ var PopupExit = function (closeBtn, popup, seconds) {
 
 };
 
-var initPopupExit = new PopupExit('.m__closePopupBtn', '.exitPopup', 10000);
+var initPopupExit = new PopupExit('.m__closePopupBtn', '.exitPopup', 8);

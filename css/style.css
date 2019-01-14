@@ -4,6 +4,7 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
+	font-family: sans-serif;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -51,6 +52,7 @@
 }
 
 .exitPopup-buttons {
+	padding: 20px 0;
 	display: flex;
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
@@ -67,9 +69,10 @@
 
 .exitPopup__content {
 	width: 100%;
-	max-width: 840px;
+	max-width: 800px;
 	color: #000;
 	background: #fff;
+	padding: 15px 60px 15px 15px;
 	position: relative;
 	z-index: 2;
 	outline: #fff solid 3px;
@@ -92,7 +95,6 @@
 	line-height: 23px;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-family: GothaProBlack;
 	letter-spacing: 1px;
 	color: #fff;
 	background: #00a0d6;
@@ -131,5 +133,5 @@
 	position: absolute;
 	right: 15px;
 	top: 15px;
-	background: url(img/close-icon.png) no-repeat
+	background: url(../img/close-icon.png) no-repeat
 }

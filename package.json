@@ -1,0 +1,26 @@
+{
+  "name": "exitpopup",
+  "version": "1.0.0",
+  "description": "exitPopup - prevents a visitor from leaving your website.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  },
+  "scripts": {
+    "test": "test",
+    "server": "server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yorgigiri/exitPopup.git"
+  },
+  "author": "Yorgigiri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yorgigiri/exitPopup/issues"
+  },
+  "homepage": "https://github.com/Yorgigiri/exitPopup#readme"
+}
