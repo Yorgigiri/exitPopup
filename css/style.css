@@ -1,0 +1,135 @@
+.exitPopup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	padding-top: 154px;
+	padding-bottom: 20px;
+	overflow: auto;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	z-index: 1001;
+	background: rgba(0, 0, 0, .5);
+	-webkit-transition: opacity .1s linear, top .1s linear, visibility .1s linear;
+	transition: opacity .1s linear, top .1s linear, visibility .1s linear;
+	opacity: 0;
+	visibility: hidden
+}
+
+.exitPopup-buttons,
+.exitPopup__btn-box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox
+}
+
+.exitPopup.m__opened-popup,
+.exitPopup.m__opened-popup .exitPopup__content {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity .1s linear, top .1s linear, visibility .1s linear
+}
+
+.exitPopup.m__opened-popup {
+	transition: opacity .1s linear, top .1s linear, visibility .1s linear
+}
+
+.exitPopup.m__opened-popup .exitPopup__content {
+	top: 0;
+	transition: opacity .1s linear, top .1s linear, visibility .1s linear
+}
+
+.exitPopup-buttons {
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center
+}
+
+.exitPopup__content {
+	width: 100%;
+	max-width: 840px;
+	color: #000;
+	background: #fff;
+	position: relative;
+	z-index: 2;
+	outline: #fff solid 3px;
+	outline-offset: 6px;
+	top: 30px;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity .1s linear, top .1s linear, visibility .1s linear;
+	transition: opacity .1s linear, top .1s linear, visibility .1s linear
+}
+
+.exitPopup__btn {
+	display: block;
+	margin: 0 14px;
+	padding: 26px 15px;
+	min-width: 340px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	font-size: 18px;
+	line-height: 23px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: GothaProBlack;
+	letter-spacing: 1px;
+	color: #fff;
+	background: #00a0d6;
+	border: 1px solid #00a0d6;
+	text-align: center
+}
+
+.exitPopup__btn-extra {
+	font-size: 16px;
+	line-height: 23px;
+	padding: 8px 0
+}
+
+.exitPopup__btn-box {
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.exitPopup__btn_type2 {
+	color: #00a0d6;
+	background: 0 0
+}
+
+.exitPopup__close {
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	background: url(img/close-icon.png) no-repeat
+}
